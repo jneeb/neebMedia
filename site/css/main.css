@@ -64,17 +64,38 @@ a {
         -webkit-transform: rotate(-45deg);
                 transform: rotate(-45deg);
         top: -3px; }
-    #header .mobileNav ul {
-      display: none;
-      padding: 0;
-      margin: 0; }
-      #header .mobileNav ul li {
-        list-style: none; }
-        #header .mobileNav ul li a {
-          text-decoration: none;
-          color: black;
-          -webkit-box-sizing: border-box;
-                  box-sizing: border-box; }
+    #header .mobileNav #mobileSlider {
+      background: white;
+      -webkit-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out;
+      -webkit-transform: translateY(-200%);
+              transform: translateY(-200%);
+      margin-top: 50px;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+      position: fixed;
+      width: 100%;
+      z-index: -1; }
+      #header .mobileNav #mobileSlider ul {
+        padding: 0;
+        margin: 0;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+        width: 100%;
+        text-align: center; }
+        #header .mobileNav #mobileSlider ul li {
+          list-style: none; }
+          #header .mobileNav #mobileSlider ul li a {
+            display: block;
+            cursor: pointer;
+            padding: 10px;
+            text-decoration: none;
+            color: black;
+            -webkit-box-sizing: border-box;
+                    box-sizing: border-box; }
+      #header .mobileNav #mobileSlider.isOpen {
+        -webkit-transform: rotateY(0);
+                transform: rotateY(0); }
   #header .tabletNav {
     display: none; }
   #header .desktopNav {
@@ -329,3 +350,15 @@ a {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     margin: 15px; }
+
+#contactForm {
+  padding: 80px 10% 50px 10%; }
+  #contactForm form input {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    width: 100%; }
+  #contactForm form textarea {
+    resize: none;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    width: 100%; }

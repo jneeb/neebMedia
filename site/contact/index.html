@@ -12,21 +12,23 @@
         <section id="header">
             <div class="mobileNav">
                 <div class="mobileLogo">
-                    <img src="/img/neebMediaLogoWeb_noBack_black.png" alt="neebMedia">
+                    <a href="/"><img src="/img/neebMediaLogoWeb_noBack_black.png" alt="neebMedia"></a>
                 </div>
 
                 <div id="burger">
                     <span></span>
                 </div>
 
-                <ul>
-                    <li><a href="#">PORTFOLIO</a></li>
-                    <li><a href="#">CONTACT US</a></li>
-                </ul>
+                <div id="mobileSlider">
+                    <ul>
+                        <li><a href="/portfolio">PORTFOLIO</a></li>
+                        <li><a href="/contact">CONTACT US</a></li>
+                    </ul>
+                </div>
             </div>
 
             <div class="tabletNav">
-                <div class="tabletLogo"><img src="/img/neebMediaLogoWeb_noBack_black.png" alt="neebMedia"></div>
+                <div class="tabletLogo"><a href="/"><img src="/img/neebMediaLogoWeb_noBack_black.png" alt="neebMedia"></a></div>
                 <ul>
                     <li><a href="#">PORTFOLIO</a></li>
                     <li><a href="#">CONTACT US</a></li>
@@ -34,7 +36,7 @@
             </div>
 
             <div class="desktopNav">
-                <div class="desktopLogo"><img src="/img/neebMediaLogoWeb_noBack_black.png" alt="neebMedia"></div>
+                <div class="desktopLogo"><a href="/"><img src="/img/neebMediaLogoWeb_noBack_black.png" alt="neebMedia"></a></div>
                 <ul>
                     <li><a href="#">PORTFOLIO</a></li>
                     <li><a class="highlight" href="#">CONTACT US</a></li>
@@ -42,13 +44,28 @@
             </div>
         </section>
 
+        <section id="portfolioHero">
+            <h1>CONTACT</h1>
+        </section>
+
+        <section id="contactForm">
+            <form action="index.php" id="form" method="post">
+						<input type="hidden" name="token" value="<?php echo $newToken; ?>">
+						<input type="text" name="name" placeholder="Full Name">
+						<input type="text" name="email" placeholder="Email">
+						<textarea name="comments" placeholder="Message" id="" cols="30" rows="10"></textarea>
+						<button type="submit" name="submit">Send</button>
+					</form>
+        </section>
+
         <section id="footer">
             <div class="webMap">
                 <ul>
-                    <li><a href="#">HOME</a></li>
-                    <li><a href="#" class="subPage">PORTFOLIO</a></li>
-                    <li><a href="#" class="subPage">E-COMMERCE</a></li>
-                    <li><a href="#" class="subPage">SEARCH ENGINE OPTIMIZATION</a></li>
+                    <li><a href="/">HOME</a></li>
+                    <li><a href="/portfolio" class="subPage">PORTFOLIO</a></li>
+                    <li><a href="/ecommerce" class="subPage">E-COMMERCE</a></li>
+                    <li><a href="/seo" class="subPage">SEARCH ENGINE OPTIMIZATION</a></li>
+                    <li><a href="/contact" class="subPage">CONTACT</a></li>
                 </ul>
             </div>
             <div class="socialLinks">
@@ -62,4 +79,5 @@
         </section>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     </body>
+    <script type="text/javascript" src="/functions/burger.js"></script>
 </html>

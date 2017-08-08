@@ -1,0 +1,161 @@
+html
+    margin: 0
+    padding: 0
+
+body
+    margin: 0
+    padding: 0
+
+a
+    text-decoration: none
+    color: black
+
+#header
+    position: fixed
+    background-color: white
+    width: 100%
+
+    .mobileNav
+        height: 50px
+
+        .mobileLogo
+            position: absolute
+
+            img
+                padding: 10px 20px
+                height: 30px
+
+        #burger
+            height: 50px
+            width: 30px
+            display: flex
+            margin-right: 20px
+            justify-content: center
+            align-items: center
+            position: fixed
+            right: 0
+
+            span,
+            span:before,
+            span:after
+                content: ""
+                position: relative
+                transition: all 0.3s ease
+                width: 30px
+                height: 3px
+                background: black
+                display: block
+
+            span:before
+                top: 10px
+
+            span:after
+                top: -13px
+
+            &.isOpen span
+                background: transparent
+
+            &.isOpen span:before,
+            &.isOpen span:after
+                transform-origin: center
+                transform: rotate(45deg)
+                top: 0
+
+            &.isOpen span:after
+                transform: rotate(-45deg)
+                top: -3px
+
+        #mobileSlider
+            background: white
+            transition: all 0.3s ease-in-out
+            transform: translateY(-200%)
+            margin-top: 50px
+            box-sizing: border-box
+            position: fixed
+            width: 100%
+            z-index: -1
+
+            ul
+                padding: 0
+                margin: 0
+                box-sizing: border-box
+                width: 100%
+                text-align: center
+
+                li
+                    list-style: none
+
+                    a
+                        display: block
+                        cursor: pointer
+                        padding: 10px
+                        text-decoration: none
+                        color: black
+                        box-sizing: border-box
+
+            &.isOpen
+                transform: rotateY(0)
+
+
+    .tabletNav
+        display: none
+
+    .desktopNav
+        display: none
+
+@media (orientation: landscape)
+    .mobileNav
+        display: none
+
+@media (min-width: 768px)
+    .mobileNav
+        display: none
+
+@media (min-width: 768px) and (orientation: landscape)
+    .mobileNav
+        display: none
+
+@media (min-width: 1025px)
+    #header
+
+        .mobileNav
+            display: none
+
+        .desktopNav
+            display: block
+            height: 50px
+            padding: 10px
+
+            .desktopLogo
+                position: absolute
+                cursor: pointer
+
+                img
+                    height: 50px
+
+            ul
+                list-style: none
+                position: absolute
+                right: 20px
+
+                li
+                    display: inline-block
+
+                    a
+                        text-decoration: none
+                        color: black
+                        transition: all 0.3s ease
+
+                        &:hover
+                            color: blue
+
+                    .highlight
+                        background: inherit
+                        box-sizing: border-box
+                        padding: 10px 10px
+                        border: 2px solid black
+                        border-radius: 50px
+                        transition: all 0.3s ease
+
+                        &:hover
+                            border-color: blue
