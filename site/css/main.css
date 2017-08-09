@@ -176,10 +176,18 @@ a {
       #hero h1 span p {
         text-align: center;
         margin: 0;
-        color: white; }
+        color: white;
+        margin: 30px 0; }
+      #hero h1 span button {
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+        padding: 10px 20px;
+        background: #56c1ff;
+        color: white;
+        border: none; }
 
 #services {
-  margin-top: 50px; }
+  padding: 50px 0; }
   #services h2 {
     text-align: center; }
   #services .rowWrap .row {
@@ -209,7 +217,8 @@ a {
       cursor: p;
       max-width: 300px;
       text-align: center;
-      margin: 0; }
+      margin: 0;
+      line-height: 25px; }
   #services .rowWrap .row:hover span {
     -webkit-filter: opacity(0.8);
             filter: opacity(0.8); }
@@ -240,14 +249,23 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-top: 50px; }
+  padding: 50px 0;
+  background: #e5e5e5; }
   #contact h2 {
     text-align: center; }
   #contact p {
     text-align: center; }
+  #contact button {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    padding: 10px 20px;
+    background: #56c1ff;
+    color: white;
+    border: none; }
 
 #footer {
-  margin-top: 50px; }
+  padding-top: 50px;
+  background: #262626; }
   #footer .webMap ul {
     list-style: none;
     padding: 0;
@@ -255,7 +273,13 @@ a {
     margin-left: 20px; }
     #footer .webMap ul li a {
       text-decoration: none;
-      color: black; }
+      color: black;
+      cursor: pointer;
+      padding: 2.5px 0;
+      display: block;
+      color: white; }
+      #footer .webMap ul li a:hover {
+        color: blue; }
     #footer .webMap ul li .subPage {
       padding-left: 20px; }
   #footer .socialLinks {
@@ -272,7 +296,8 @@ a {
       font-size: 30px;
       -webkit-transition: all 0.3s ease-in-out;
       transition: all 0.3s ease-in-out;
-      cursor: pointer; }
+      cursor: pointer;
+      color: white; }
     #footer .socialLinks .fa-facebook:hover {
       color: #3b5998; }
     #footer .socialLinks .fa-twitter:hover {
@@ -318,15 +343,19 @@ a {
   background-size: cover; }
   #portfolioHero h1 {
     margin: 0;
-    color: white; }
+    color: white;
+    text-align: center; }
 
-#portfolioAbout p {
-  text-align: center;
-  max-width: 300px;
-  position: relative;
-  left: 50%;
-  -webkit-transform: translate(-50%);
-          transform: translate(-50%); }
+#portfolioAbout {
+  margin-top: 50px; }
+  #portfolioAbout p {
+    text-align: center;
+    max-width: 300px;
+    position: relative;
+    left: 50%;
+    -webkit-transform: translate(-50%);
+            transform: translate(-50%);
+    line-height: 25px; }
 
 #portfolioImg .portfolioWrap {
   display: -webkit-box;
@@ -352,13 +381,27 @@ a {
     margin: 15px; }
 
 #contactForm {
-  padding: 80px 10% 50px 10%; }
+  padding: 20px 10% 50px 10%; }
+  #contactForm p {
+    margin-bottom: 30px;
+    line-height: 25px; }
   #contactForm form input {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
-    width: 100%; }
+    width: 100%;
+    line-height: 16px;
+    margin-bottom: 20px;
+    padding: 10px; }
   #contactForm form textarea {
     resize: none;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
-    width: 100%; }
+    width: 100%;
+    line-height: 16px;
+    padding: 10px; }
+  #contactForm form button {
+    position: relative;
+    float: right;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    padding: 10px; }
