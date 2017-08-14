@@ -3,6 +3,8 @@
 
     h2
         text-align: center
+        font-family: $font
+        font-weight: $bold
 
     .rowWrap
 
@@ -24,6 +26,8 @@
             h3
                 text-align: center
                 cursor: pointer
+                font-family: $font
+                font-weight: $bold
 
             p
                 cursor: p
@@ -31,15 +35,19 @@
                 text-align: center
                 margin: 0
                 line-height: 25px
+                font-family: $font
+                font-weight: $light
 
         .row:hover
 
             span
                 filter: opacity(0.8)
+                z-index: -1
 
             h3,
             p
                 text-decoration: underline
+                z-index: -1
 
 // @media (orientation: landscape)
 //

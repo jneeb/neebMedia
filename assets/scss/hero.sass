@@ -12,7 +12,6 @@
             flex-direction: column
             justify-content: center
             align-items: center
-            // background: pink
             content: ""
             height: 60vh
 
@@ -21,6 +20,8 @@
                 margin: 0
                 color: white
                 margin: 30px 0
+                font-family: $font
+                font-weight: $bold
 
             button
                 box-sizing: border-box
@@ -28,7 +29,13 @@
                 background: #56c1ff
                 color: white
                 border: none
-                // margin-top: 30px
+                font-family: $font
+                font-weight: $bold
+                cursor: pointer
+
+                &:hover
+                    color: black
+                    background: white
 
 
 @media (orientation: landscape)

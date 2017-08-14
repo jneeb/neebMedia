@@ -13,9 +13,11 @@ a {
 #header {
   position: fixed;
   background-color: white;
-  width: 100%; }
+  width: 100%;
+  z-index: 2; }
   #header .mobileNav {
-    height: 50px; }
+    height: 50px;
+    border-bottom: 1px solid black; }
     #header .mobileNav .mobileLogo {
       position: absolute; }
       #header .mobileNav .mobileLogo img {
@@ -70,12 +72,13 @@ a {
       transition: all 0.3s ease-in-out;
       -webkit-transform: translateY(-200%);
               transform: translateY(-200%);
-      margin-top: 50px;
+      padding-top: 60px;
       -webkit-box-sizing: border-box;
               box-sizing: border-box;
-      position: fixed;
+      z-index: -1;
+      position: absolute;
       width: 100%;
-      z-index: -1; }
+      border-bottom: 1px solid black; }
       #header .mobileNav #mobileSlider ul {
         padding: 0;
         margin: 0;
@@ -92,7 +95,9 @@ a {
             text-decoration: none;
             color: black;
             -webkit-box-sizing: border-box;
-                    box-sizing: border-box; }
+                    box-sizing: border-box;
+            font-family: "Montserrat", sans-serif;
+            font-weight: 600; }
       #header .mobileNav #mobileSlider.isOpen {
         -webkit-transform: rotateY(0);
                 transform: rotateY(0); }
@@ -135,7 +140,9 @@ a {
           text-decoration: none;
           color: black;
           -webkit-transition: all 0.3s ease;
-          transition: all 0.3s ease; }
+          transition: all 0.3s ease;
+          font-family: "Montserrat", sans-serif;
+          font-weight: 600; }
           #header .desktopNav ul li a:hover {
             color: blue; }
         #header .desktopNav ul li .highlight {
@@ -177,19 +184,29 @@ a {
         text-align: center;
         margin: 0;
         color: white;
-        margin: 30px 0; }
+        margin: 30px 0;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 600; }
       #hero h1 span button {
         -webkit-box-sizing: border-box;
                 box-sizing: border-box;
         padding: 10px 20px;
         background: #56c1ff;
         color: white;
-        border: none; }
+        border: none;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 600;
+        cursor: pointer; }
+        #hero h1 span button:hover {
+          color: black;
+          background: white; }
 
 #services {
   padding: 50px 0; }
   #services h2 {
-    text-align: center; }
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600; }
   #services .rowWrap .row {
     margin-top: 20px;
     display: -webkit-box;
@@ -212,19 +229,25 @@ a {
       cursor: pointer; }
     #services .rowWrap .row h3 {
       text-align: center;
-      cursor: pointer; }
+      cursor: pointer;
+      font-family: "Montserrat", sans-serif;
+      font-weight: 600; }
     #services .rowWrap .row p {
       cursor: p;
       max-width: 300px;
       text-align: center;
       margin: 0;
-      line-height: 25px; }
+      line-height: 25px;
+      font-family: "Montserrat", sans-serif;
+      font-weight: 200; }
   #services .rowWrap .row:hover span {
     -webkit-filter: opacity(0.8);
-            filter: opacity(0.8); }
+            filter: opacity(0.8);
+    z-index: -1; }
   #services .rowWrap .row:hover h3,
   #services .rowWrap .row:hover p {
-    text-decoration: underline; }
+    text-decoration: underline;
+    z-index: -1; }
 
 @media (min-width: 1025px) {
   #services .rowWrap {
@@ -252,7 +275,9 @@ a {
   padding: 50px 0;
   background: #e5e5e5; }
   #contact h2 {
-    text-align: center; }
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600; }
   #contact p {
     text-align: center; }
   #contact button {
@@ -261,7 +286,13 @@ a {
     padding: 10px 20px;
     background: #56c1ff;
     color: white;
-    border: none; }
+    border: none;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    cursor: pointer; }
+    #contact button:hover {
+      color: white;
+      background: black; }
 
 #footer {
   padding-top: 50px;
@@ -277,7 +308,9 @@ a {
       cursor: pointer;
       padding: 2.5px 0;
       display: block;
-      color: white; }
+      color: white;
+      font-family: "Montserrat", sans-serif;
+      font-weight: 600; }
       #footer .webMap ul li a:hover {
         color: blue; }
     #footer .webMap ul li .subPage {
@@ -344,7 +377,9 @@ a {
   #portfolioHero h1 {
     margin: 0;
     color: white;
-    text-align: center; }
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600; }
 
 #portfolioAbout {
   margin-top: 50px; }
@@ -355,7 +390,9 @@ a {
     left: 50%;
     -webkit-transform: translate(-50%);
             transform: translate(-50%);
-    line-height: 25px; }
+    line-height: 25px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 200; }
 
 #portfolioImg .portfolioWrap {
   display: -webkit-box;
@@ -384,7 +421,8 @@ a {
   padding: 20px 10% 50px 10%; }
   #contactForm p {
     margin-bottom: 30px;
-    line-height: 25px; }
+    line-height: 25px;
+    text-align: center; }
   #contactForm form input {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
