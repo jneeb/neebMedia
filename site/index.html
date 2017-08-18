@@ -58,17 +58,17 @@
             <p></p>
             <div class="rowWrap">
                 <div class="row">
-                    <a href="/portfolio"><span></span></a>
+                    <a href="/portfolio"><img src="/img/ecom.jpg" alt=""></a>
                     <a href="/portfolio"><h3>Websites</h3></a>
                     <a href="/portfolio"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p></a>
                 </div>
                 <div class="row">
-                    <a href="/seo"><span></span></a>
+                    <a href="/seo"><img src="/img/seo.jpg" alt=""></a>
                     <a href="/seo"><h3>Search Engine Optimization</h3></a>
                     <a href="/seo"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p></a>
                 </div>
                 <div class="row">
-                    <a href="/ecommerce"><span></span></a>
+                    <a href="/ecommerce"><img src="/img/ecom.jpg" alt=""></a>
                     <a href="/ecommerce"><h3>E-Commerce Websites</h3></a>
                     <a href="/ecommerce"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p></a>
                 </div>
@@ -77,7 +77,18 @@
 
         <section id="contact">
             <h2>INTERESTED IN WORKING WITH US?</h2>
-            <a href="/contact"><button>CONTACT</button></a>
+            <section id="contactForm">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+                <form action="index.php" id="form" method="post">
+    						<input type="hidden" name="token" value="<?php echo $newToken; ?>">
+    						<input type="text" name="name" placeholder="Name:">
+    						<input type="text" name="email" placeholder="Email:">
+    						<textarea name="comments" placeholder="Tell us about the project:" id="" cols="30" rows="10"></textarea>
+    						<button type="submit" name="submit">Send</button>
+    					</form>
+            </section>
         </section>
 
         <section id="footer">
