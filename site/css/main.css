@@ -23,7 +23,14 @@ a {
       #header .mobileNav .mobileLogo img {
         padding: 10px 20px;
         height: 30px; }
-    #header .mobileNav #burger {
+    #header .mobileNav #burgerNoJS {
+      display: none;
+    }
+    #header .mobileNav #burgerNoJS + label {
+      z-index: 666;
+    }
+    #header .mobileNav #burger,
+    #header .mobileNav #burgerNoJS + label {
       height: 50px;
       width: 30px;
       display: -webkit-box;
@@ -53,16 +60,20 @@ a {
         top: 10px; }
       #header .mobileNav #burger span:after {
         top: -13px; }
-      #header .mobileNav #burger.isOpen span {
+      #header .mobileNav #burger.isOpen span,
+      #header .mobileNav #burgerNoJS:checked ~ #burger span {
         background: transparent; }
       #header .mobileNav #burger.isOpen span:before,
-      #header .mobileNav #burger.isOpen span:after {
+      #header .mobileNav #burger.isOpen span:after,
+      #header .mobileNav #burgerNoJS:checked ~ #burger span:before,
+      #header .mobileNav #burgerNoJS:checked ~ #burger span:after {
         -webkit-transform-origin: center;
                 transform-origin: center;
         -webkit-transform: rotate(45deg);
                 transform: rotate(45deg);
         top: 0; }
-      #header .mobileNav #burger.isOpen span:after {
+      #header .mobileNav #burger.isOpen span:after,
+      #header .mobileNav #burgerNoJS:checked ~ #burger span:after {
         -webkit-transform: rotate(-45deg);
                 transform: rotate(-45deg);
         top: -3px; }
