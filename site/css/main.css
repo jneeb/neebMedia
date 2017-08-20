@@ -148,7 +148,7 @@ a {
                   box-sizing: border-box;
           margin-left: 20px; }
           #header .desktopNav ul li a:hover {
-            color: blue; }
+            color: #56c1ff; }
         #header .desktopNav ul li .highlight {
           background: inherit;
           -webkit-box-sizing: border-box;
@@ -159,7 +159,9 @@ a {
           -webkit-transition: all 0.3s ease;
           transition: all 0.3s ease; }
           #header .desktopNav ul li .highlight:hover {
-            border-color: blue; } }
+            border-color: #56c1ff;
+            background: #56c1ff;
+            color: white; } }
 
 #hero {
   height: 70vh;
@@ -191,7 +193,8 @@ a {
         color: white;
         margin: 30px 0;
         font-family: "Montserrat", sans-serif;
-        font-weight: 600; }
+        font-weight: 600;
+        max-width: 500px; }
       #hero h1 span button {
         -webkit-box-sizing: border-box;
                 box-sizing: border-box;
@@ -317,7 +320,7 @@ a {
       font-family: "Montserrat", sans-serif;
       font-weight: 600; }
       #footer .webMap ul li a:hover {
-        color: blue; }
+        color: #56c1ff; }
     #footer .webMap ul li .subPage {
       padding-left: 20px; }
   #footer .socialLinks {
@@ -340,6 +343,8 @@ a {
       color: #3b5998; }
     #footer .socialLinks .fa-twitter:hover {
       color: #55acee; }
+    #footer .socialLinks .fa-instagram:hover {
+      color: #df3967; }
     #footer .socialLinks .fa-snapchat-ghost:hover {
       color: #fffc00; }
     #footer .socialLinks .fa-linkedin:hover {
@@ -354,19 +359,24 @@ a {
     display: flex;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
-            justify-content: center; }
+            justify-content: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row; }
     #footer .socialLinks {
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
       -webkit-box-align: end;
           -ms-flex-align: end;
-              align-items: flex-end; }
+              align-items: flex-end;
+      width: 300px; }
       #footer .socialLinks i {
         padding: 5px; } }
 
 #portfolioHero {
-  height: 30vh;
+  height: 40vh;
   padding-top: 60px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -377,8 +387,9 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background: linear-gradient(50deg, rgba(38, 38, 38, 0.8), rgba(38, 38, 38, 0.3)), url(/img/heroBackground.jpg);
-  background-size: cover; }
+  background: linear-gradient(50deg, rgba(38, 38, 38, 0.8), rgba(38, 38, 38, 0.3)), url(/img/ecom.jpg);
+  background-size: cover;
+  background-position: center; }
   #portfolioHero h1 {
     margin: 0;
     color: white;
@@ -390,14 +401,15 @@ a {
   margin-top: 50px; }
   #portfolioAbout p {
     text-align: center;
-    max-width: 300px;
+    padding: 20px 10% 50px 10%;
     position: relative;
     left: 50%;
     -webkit-transform: translate(-50%);
             transform: translate(-50%);
     line-height: 25px;
     font-family: "Montserrat", sans-serif;
-    font-weight: 200; }
+    font-weight: 200;
+    max-width: 920px; }
 
 #portfolioImg .portfolioWrap {
   display: -webkit-box;
@@ -417,10 +429,42 @@ a {
     width: 300px;
     height: 300px;
     background: pink;
-    display: block;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
-    margin: 15px; }
+    margin: 1.5px;
+    cursor: pointer; }
+    #portfolioImg .portfolioWrap span button {
+      display: none;
+      cursor: pointer; }
+    #portfolioImg .portfolioWrap span:hover {
+      background: linear-gradient(50deg, rgba(38, 38, 38, 0.8), rgba(38, 38, 38, 0.3)), url(/img/ecom.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center; }
+      #portfolioImg .portfolioWrap span:hover button {
+        display: block; }
+
+@media (min-width: 1025px) {
+  #portfolioImg .portfolioWrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    padding: 20px 10% 50px 10%; } }
 
 #contactForm {
   padding: 20px 10% 50px 10%; }
