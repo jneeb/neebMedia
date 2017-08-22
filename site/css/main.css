@@ -497,3 +497,7 @@ a {
             box-sizing: border-box;
     padding: 10px 20px;
     margin-top: 15px; }
+
+@media (min-width: 1200px) {
+  #contactForm {
+    padding: 20px 20% 50px 20%; } }
