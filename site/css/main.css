@@ -290,6 +290,13 @@ a {
     text-align: center;
     font-family: "Montserrat", sans-serif;
     font-weight: 200; }
+  #contact .error {
+    font-weight: 600;
+    background: red;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    padding: 10px;
+    margin-bottom: 0; }
   #contact button {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
@@ -455,7 +462,7 @@ a {
             align-items: center;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
-    margin: 0 10px; }
+    margin: 10px; }
     #portfolioImg .portfolioWrap span button {
       display: none;
       -webkit-box-sizing: border-box;
@@ -478,7 +485,7 @@ a {
     background-size: cover;
     background-position: right; }
     #portfolioImg .portfolioWrap .atreo:hover {
-      background: linear-gradient(50deg, rgba(38, 38, 38, 0.8), rgba(38, 38, 38, 0.3)), url(/img/atreo.jpg);
+      background: linear-gradient(50deg, rgba(86, 193, 255, 0.8), rgba(86, 193, 255, 0.3)), url(/img/atreo.jpg);
       background-size: cover;
       background-position: right; }
   #portfolioImg .portfolioWrap .verona {
@@ -486,7 +493,7 @@ a {
     background-size: cover;
     background-position: right; }
     #portfolioImg .portfolioWrap .verona:hover {
-      background: linear-gradient(50deg, rgba(38, 38, 38, 0.8), rgba(38, 38, 38, 0.3)), url(/img/verona.png);
+      background: linear-gradient(50deg, rgba(86, 193, 255, 0.8), rgba(86, 193, 255, 0.3)), url(/img/verona.png);
       background-size: cover;
       background-position: right; }
 
@@ -501,7 +508,8 @@ a {
             flex-direction: row;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
-    padding: 20px 10% 50px 10%; } }
+    padding: 20px 10% 50px 10%;
+    margin: 0 10px; } }
 
 @media (min-width: 1500px) {
   #portfolioImg .portfolioWrap {
