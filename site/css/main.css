@@ -111,20 +111,13 @@ a {
     display: none; } }
 
 @media (min-width: 768px) {
-  .mobileNav {
-    display: none; } }
-
-@media (min-width: 768px) and (orientation: landscape) {
-  .mobileNav {
-    display: none; } }
-
-@media (min-width: 1025px) {
   #header .mobileNav {
     display: none; }
   #header .desktopNav {
     display: block;
     height: 50px;
-    padding: 10px; }
+    padding: 10px;
+    border-bottom: 1px solid black; }
     #header .desktopNav .desktopLogo {
       position: absolute;
       cursor: pointer;
@@ -170,7 +163,8 @@ a {
   background-size: cover;
   background-position: center; }
   #hero h1 {
-    margin: 0; }
+    margin: 0;
+    padding: 0 5px; }
     #hero h1 span {
       display: -webkit-box;
       display: -ms-flexbox;
@@ -208,6 +202,12 @@ a {
         #hero h1 span button:hover {
           color: black;
           background: white; }
+
+@media (min-width: 768px) {
+  #hero h1 span p {
+    font-size: 35px; }
+  #hero h1 span a button {
+    font-size: 15px; } }
 
 #services {
   padding: 50px 0; }
@@ -257,7 +257,7 @@ a {
     text-decoration: underline;
     z-index: -1; }
 
-@media (min-width: 1025px) {
+@media (min-width: 768px) {
   #services .rowWrap {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -287,7 +287,9 @@ a {
     font-family: "Montserrat", sans-serif;
     font-weight: 600; }
   #contact p {
-    text-align: center; }
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 200; }
   #contact button {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
@@ -333,7 +335,7 @@ a {
             justify-content: center;
     margin-top: 20px; }
     #footer .socialLinks i {
-      padding: 10px;
+      padding: 10px 40px;
       font-size: 30px;
       -webkit-transition: all 0.3s ease-in-out;
       transition: all 0.3s ease-in-out;
@@ -352,7 +354,7 @@ a {
     #footer .socialLinks .fa-youtube-play:hover {
       color: #bb0000; }
 
-@media (min-width: 1025px) {
+@media (min-width: 768px) {
   #footer {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -373,7 +375,7 @@ a {
               align-items: flex-end;
       width: 300px; }
       #footer .socialLinks i {
-        padding: 5px; } }
+        padding: 0px 20px; } }
 
 #portfolioHero {
   height: 40vh;
@@ -397,11 +399,21 @@ a {
     font-family: "Montserrat", sans-serif;
     font-weight: 600; }
 
+#portfolioHero.websitesHero {
+  background: linear-gradient(50deg, rgba(38, 38, 38, 0.8), rgba(38, 38, 38, 0.3)), url(/img/atreo.jpg);
+  background-size: cover;
+  background-position: center; }
+
+#portfolioHero.seoHero {
+  background: linear-gradient(50deg, rgba(38, 38, 38, 0.8), rgba(38, 38, 38, 0.3)), url(/img/seo.jpg);
+  background-size: cover;
+  background-position: center; }
+
 #portfolioAbout {
   margin-top: 50px; }
   #portfolioAbout p {
     text-align: center;
-    padding: 20px 10% 50px 10%;
+    padding: 0px 10% 0px 10%;
     position: relative;
     left: 50%;
     -webkit-transform: translate(-50%);
@@ -410,6 +422,10 @@ a {
     font-family: "Montserrat", sans-serif;
     font-weight: 200;
     max-width: 920px; }
+  #portfolioAbout h2 {
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600; }
 
 #portfolioImg .portfolioWrap {
   display: -webkit-box;
@@ -428,7 +444,6 @@ a {
   #portfolioImg .portfolioWrap span {
     width: 300px;
     height: 300px;
-    background: pink;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -440,20 +455,42 @@ a {
             align-items: center;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
-    margin: 1.5px;
-    cursor: pointer; }
+    margin: 0 10px; }
     #portfolioImg .portfolioWrap span button {
       display: none;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+      padding: 10px 20px;
+      background: white;
+      color: #56c1ff;
+      border: none;
+      font-family: "Montserrat", sans-serif;
+      font-weight: 600;
       cursor: pointer; }
     #portfolioImg .portfolioWrap span:hover {
-      background: linear-gradient(50deg, rgba(38, 38, 38, 0.8), rgba(38, 38, 38, 0.3)), url(/img/ecom.jpg);
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center; }
       #portfolioImg .portfolioWrap span:hover button {
         display: block; }
+  #portfolioImg .portfolioWrap .atreo {
+    background: url(/img/atreo.jpg);
+    background-size: cover;
+    background-position: right; }
+    #portfolioImg .portfolioWrap .atreo:hover {
+      background: linear-gradient(50deg, rgba(38, 38, 38, 0.8), rgba(38, 38, 38, 0.3)), url(/img/atreo.jpg);
+      background-size: cover;
+      background-position: right; }
+  #portfolioImg .portfolioWrap .verona {
+    background: url(/img/verona.png);
+    background-size: cover;
+    background-position: right; }
+    #portfolioImg .portfolioWrap .verona:hover {
+      background: linear-gradient(50deg, rgba(38, 38, 38, 0.8), rgba(38, 38, 38, 0.3)), url(/img/verona.png);
+      background-size: cover;
+      background-position: right; }
 
-@media (min-width: 1025px) {
+@media (min-width: 768px) {
   #portfolioImg .portfolioWrap {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -468,14 +505,24 @@ a {
 
 @media (min-width: 1500px) {
   #portfolioImg .portfolioWrap {
-    padding: 50px 20% 50px 20%; } }
+    padding: 20px 20% 50px 20%; } }
+
+@media (min-width: 768px) {
+  #portfolioHero h1 {
+    font-size: 35px; } }
+
+@media (min-width: 1025px) {
+  #portfolioHero h1 {
+    font-size: 40px; } }
 
 #contactForm {
   padding: 20px 10% 50px 10%; }
   #contactForm p {
     margin-bottom: 30px;
     line-height: 25px;
-    text-align: center; }
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 200; }
   #contactForm form input {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;

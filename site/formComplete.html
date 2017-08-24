@@ -1,78 +1,15 @@
-<?php
-session_start();
-function generateFormToken($form) {
-	$token = md5(uniqid(microtime(), true));
-	$_SESSION[$form.'_token'] = $token;
-	return $token;
-}
-function verifyFormToken($form) {
-	if (!isset($_SESSION[$form.'_token'])) {
-		return false;
-	}
-	if (!isset($_POST['token'])) {
-		return false;
-	}
-	if ($_SESSION[$form.'_token'] !== $_POST['token']) {
-		return false;
-	}
-	return true;
-}
-function check_input($data, $problem='')
-{
-	$data = trim($data);
-	$data = stripslashes($data);
-	$data = htmlspecialchars($data);
-	if ($problem && strlen($data) == 0)
-	{
-		show_error($problem);
-	}
-	return $data;
-}
-function show_error($myError)
-{
-?>
-	<html>
-	<body>
-	<b>Please correct the following test error:</b><br />
-	<?php echo $myError; ?>
-	</body>
-	</html>
-<?php
-exit();
-}
-if (verifyFormToken('form1')) {
-	$myemail = 'mail@justinneeb.com';
-	$name = check_input($_POST['name'], "Enter your name.");
-	$email = check_input($_POST['email']);
-	$comments = check_input($_POST['comments'], "Please include a message.");
-	$subject = "Freelance Work";
-	if (!preg_match("/([\w\-]+\@[\w\-]+\.[\w\-]+)/", $email))
-	{
-	    show_error("E-mail address not valid");
-	}
-	$message = "Name: $name
-	Email: $email
-	Message: $comments";
-	mail($myemail, $subject, $message);
-	header('Location: formComplete.html');
-	exit();
-} else {
-}
-?>
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Toronto eCommerce | NeebMedia</title>
+        <title>Toronto Web Design | NeebMedia</title>
         <link rel="stylesheet" href="/css/main.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="icon" href="/img/favicon.ico">
         <link href="https://fonts.googleapis.com/css?family=Montserrat:200,600" rel="stylesheet">
     </head>
-    <?php
-	$newToken = generateFormToken('form1');
-	?>
+
     <body>
         <section id="header">
             <div class="mobileNav">
@@ -96,32 +33,15 @@ if (verifyFormToken('form1')) {
                 <div class="desktopLogo"><a href="/"><img src="/img/neebMediaLogoWeb_noBack_black.png" alt="neebMedia"></a></div>
                 <ul>
                     <li><a href="/portfolio">PORTFOLIO</a></li>
-                    <!-- <li><a class="highlight" href="#contact">CONTACT US</a></li> -->
+                    <li><a class="highlight" href="#contact">CONTACT US</a></li>
                 </ul>
             </div>
         </section>
 
-        <section id="portfolioHero" class="ecomHero">
-            <h1>E-COMMERCE</h1>
-        </section>
-
-        <section id="portfolioAbout">
-            <p>Our eCommerce solution is based off the shopify platform. It allows the user to add products, track sales, and print shipping lables, all from one dashboard. With customizable templates, you will have a beautiful online store that streamlines the backend process.</p>
-            <p>Call us today at <b>(647) 550 4905</b> for a free quote, or email us below.</p>
-        </section>
-
-        <section id="contact">
-            <h2>INTERESTED IN WORKING WITH US?</h2>
-            <section id="contactForm">
-                <form action="index.php" id="form" method="post">
-    						<input type="hidden" name="token" value="<?php echo $newToken; ?>">
-    						<input type="text" name="name" placeholder="Name:">
-    						<input type="text" name="email" placeholder="Email:">
-    						<textarea name="comments" placeholder="Tell us about the project:" id="" cols="30" rows="10"></textarea>
-    						<button type="submit" name="submit">Send</button>
-    					</form>
-            </section>
-        </section>
+        <section class="completeMessage">
+			<h1>Thank you for reaching out! I will contact you as soon as possible.</h1>
+			<a href="/"><button type="button" name="button">Back to Home</button></a>
+		</section>
 
         <section id="footer">
             <div class="webMap">
@@ -142,6 +62,7 @@ if (verifyFormToken('form1')) {
             </div>
         </section>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
     </body>
     <script type="text/javascript" src="/functions/burger.js"></script>
     <script type="text/javascript" src="/functions/smoothScroll.js"></script>

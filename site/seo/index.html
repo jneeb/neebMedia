@@ -1,14 +1,78 @@
+<?php
+session_start();
+function generateFormToken($form) {
+	$token = md5(uniqid(microtime(), true));
+	$_SESSION[$form.'_token'] = $token;
+	return $token;
+}
+function verifyFormToken($form) {
+	if (!isset($_SESSION[$form.'_token'])) {
+		return false;
+	}
+	if (!isset($_POST['token'])) {
+		return false;
+	}
+	if ($_SESSION[$form.'_token'] !== $_POST['token']) {
+		return false;
+	}
+	return true;
+}
+function check_input($data, $problem='')
+{
+	$data = trim($data);
+	$data = stripslashes($data);
+	$data = htmlspecialchars($data);
+	if ($problem && strlen($data) == 0)
+	{
+		show_error($problem);
+	}
+	return $data;
+}
+function show_error($myError)
+{
+?>
+	<html>
+	<body>
+	<b>Please correct the following test error:</b><br />
+	<?php echo $myError; ?>
+	</body>
+	</html>
+<?php
+exit();
+}
+if (verifyFormToken('form1')) {
+	$myemail = 'mail@justinneeb.com';
+	$name = check_input($_POST['name'], "Enter your name.");
+	$email = check_input($_POST['email']);
+	$comments = check_input($_POST['comments'], "Please include a message.");
+	$subject = "Freelance Work";
+	if (!preg_match("/([\w\-]+\@[\w\-]+\.[\w\-]+)/", $email))
+	{
+	    show_error("E-mail address not valid");
+	}
+	$message = "Name: $name
+	Email: $email
+	Message: $comments";
+	mail($myemail, $subject, $message);
+	header('Location: formComplete.html');
+	exit();
+} else {
+}
+?>
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Neeb Media</title>
+        <title>Toronto SEO | NeebMedia</title>
         <link rel="stylesheet" href="/css/main.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="icon" href="/img/favicon.ico">
         <link href="https://fonts.googleapis.com/css?family=Montserrat:200,600" rel="stylesheet">
     </head>
-
+    <?php
+	$newToken = generateFormToken('form1');
+	?>
     <body>
         <section id="header">
             <div class="mobileNav">
@@ -23,42 +87,33 @@
                 <div id="mobileSlider">
                     <ul>
                         <li><a href="/portfolio">PORTFOLIO</a></li>
-                        <li><a href="/contact">CONTACT US</a></li>
+                        <li><a href="#contact">CONTACT US</a></li>
                     </ul>
                 </div>
-            </div>
-
-            <div class="tabletNav">
-                <div class="tabletLogo"><a href="/"><img src="/img/neebMediaLogoWeb_noBack_black.png" alt="neebMedia"></a></div>
-                <ul>
-                    <li><a href="#">PORTFOLIO</a></li>
-                    <li><a href="#">CONTACT US</a></li>
-                </ul>
             </div>
 
             <div class="desktopNav">
                 <div class="desktopLogo"><a href="/"><img src="/img/neebMediaLogoWeb_noBack_black.png" alt="neebMedia"></a></div>
                 <ul>
-                    <li><a href="#">PORTFOLIO</a></li>
-                    <li><a class="highlight" href="#">CONTACT US</a></li>
+                    <li><a href="/portfolio">PORTFOLIO</a></li>
+                    <!-- <li><a class="highlight" href="#contact">CONTACT US</a></li> -->
                 </ul>
             </div>
         </section>
 
-        <section id="portfolioHero">
+        <section id="portfolioHero" class="seoHero">
             <h1>SEARCH ENGINE OPTIMIZATION</h1>
         </section>
 
         <section id="portfolioAbout">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>It isn't enough to have a good looking functional website, search engine optimization is jusxt as important when it comes to building your online presence. With our SEO package, we will research market tendencies to allow your website to be a top result on all search engines.</p>
+            <p>SEO doesn't stop at the search results. We will also collect anyaltics on your visitors to track and improve on sales conversions.</p>
+            <p>Call us today at <b>(647) 550 4905</b> for a free quote, or email us below.</p>
         </section>
 
         <section id="contact">
             <h2>INTERESTED IN WORKING WITH US?</h2>
             <section id="contactForm">
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </p>
                 <form action="index.php" id="form" method="post">
     						<input type="hidden" name="token" value="<?php echo $newToken; ?>">
     						<input type="text" name="name" placeholder="Name:">
@@ -76,19 +131,19 @@
                     <li><a href="/portfolio" class="subPage">PORTFOLIO</a></li>
                     <li><a href="/ecommerce" class="subPage">E-COMMERCE</a></li>
                     <li><a href="/seo" class="subPage">SEARCH ENGINE OPTIMIZATION</a></li>
-                    <li><a href="/contact" class="subPage">CONTACT</a></li>
                 </ul>
             </div>
             <div class="socialLinks">
-                <i class="fa fa-facebook" aria-hidden="true"></i>
-                <i class="fa fa-twitter" aria-hidden="true"></i>
-                <i class="fa fa-instagram" aria-hidden="true"></i>
-                <i class="fa fa-snapchat-ghost" aria-hidden="true"></i>
-                <i class="fa fa-linkedin" aria-hidden="true"></i>
-                <i class="fa fa-youtube-play" aria-hidden="true"></i>
+                <!-- <i class="fa fa-facebook" aria-hidden="true"></i> -->
+                <a href="https://twitter.com/neebMedia"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                <a href="https://www.instagram.com/neebmedia/"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                <!-- <i class="fa fa-snapchat-ghost" aria-hidden="true"></i> -->
+                <!-- <i class="fa fa-linkedin" aria-hidden="true"></i> -->
+                <!-- <i class="fa fa-youtube-play" aria-hidden="true"></i> -->
             </div>
         </section>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     </body>
     <script type="text/javascript" src="/functions/burger.js"></script>
+    <script type="text/javascript" src="/functions/smoothScroll.js"></script>
 </html>
