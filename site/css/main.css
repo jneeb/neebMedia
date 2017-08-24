@@ -560,3 +560,31 @@ a {
 @media (min-width: 1200px) {
   #contactForm {
     padding: 20px 20% 50px 20%; } }
+
+.completeMessage {
+  height: 60vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+  .completeMessage h1 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600; }
+  .completeMessage button {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    padding: 10px 20px;
+    background: #56c1ff;
+    color: white;
+    border: none;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    cursor: pointer; }
+    .completeMessage button:hover {
+      color: white;
+      background: black; }
