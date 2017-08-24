@@ -578,7 +578,9 @@ a {
           flex-direction: column; }
   .completeMessage h1 {
     font-family: "Montserrat", sans-serif;
-    font-weight: 600; }
+    font-weight: 600;
+    text-align: center;
+    padding: 0 5px; }
   .completeMessage button {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
