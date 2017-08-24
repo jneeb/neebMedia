@@ -161,40 +161,13 @@ if (verifyFormToken('form1')) {
             </div>
         </section>
 
-        <section id="hero">
-            <h1>
-                <span>
-                    <p>WEB DESIGN, E-COMMERCE AND SEARCH ENGINE OPTIMIZATION.</p>
-                    <a href="#contact"><button type="button" name="button">GET A FREE QUOTE</button></a>
-                </span>
-            </h1>
-        </section>
-
-        <section id="services">
-            <h2>SERVICES</h2>
-            <p></p>
-            <div class="rowWrap">
-                <div class="row">
-                    <a href="/portfolio"><img src="/img/atreo.jpg" alt=""></a>
-                    <a href="/portfolio"><h3>Websites</h3></a>
-                    <a href="/portfolio"><p>Custom built websites to match the look and feel of your business.</p></a>
-                </div>
-                <div class="row">
-                    <a href="/seo"><img src="/img/seo.jpg" alt=""></a>
-                    <a href="/seo"><h3>Search Engine Optimization</h3></a>
-                    <a href="/seo"><p>Bring your website to the top of search engines and allow your customers to find you.</p></a>
-                </div>
-                <div class="row">
-                    <a href="/ecommerce"><img src="/img/ecom.jpg" alt=""></a>
-                    <a href="/ecommerce"><h3>eCommerce Websites</h3></a>
-                    <a href="/ecommerce"><p>Easy and great looking eCommerce solution that maximizes conversion and minimizes headache.</p></a>
-                </div>
-            </div>
+        <section id="portfolioHero">
+            <h1>CONTACT</h1>
         </section>
 
         <section id="contact">
             <h2>INTERESTED IN WORKING WITH US?</h2>
-            <p>Call us today at <b>(647) 550 4905</b> for a free quote, or email us below.</p>
+			<p>Call us today at <b>(647) 550 4905</b> for a free quote, or email us below.</p>
             <section id="contactForm">
                 <form action="index.php" id="form" method="post">
     						<input type="hidden" name="token" value="<?php echo $newToken; ?>">
@@ -212,7 +185,7 @@ if (verifyFormToken('form1')) {
                     <li><a href="/">HOME</a></li>
                     <li><a href="/portfolio" class="subPage">PORTFOLIO</a></li>
                     <li><a href="/ecommerce" class="subPage">E-COMMERCE</a></li>
-                    <li><a href="/seo" class="subPage">SEARCH ENGINE OPTIMIZATION</a></li>
+                    <li><a href="/seo" class="subPage">SEAR CH ENGINE OPTIMIZATION</a></li>
                 </ul>
             </div>
             <div class="socialLinks">
@@ -225,8 +198,5 @@ if (verifyFormToken('form1')) {
             </div>
         </section>
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     </body>
-    <script type="text/javascript" src="/functions/burger.js"></script>
-    <script type="text/javascript" src="/functions/smoothScroll.js"></script>
 </html>
