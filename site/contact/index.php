@@ -41,6 +41,16 @@ function show_error($myError)
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="icon" href="/img/favicon.ico">
         <link href="https://fonts.googleapis.com/css?family=Montserrat:200,600" rel="stylesheet">
+		<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+		  ga('create', 'UA-94009407-2', 'auto');
+		  ga('send', 'pageview');
+
+		</script>
     </head>
     <body>
         <section id="header">
@@ -105,7 +115,7 @@ if (verifyFormToken('form1')) {
 	$name = check_input($_POST['name'], "Enter your name.");
 	$email = check_input($_POST['email']);
 	$comments = check_input($_POST['comments'], "Please include a message.");
-	$subject = "neebMedia - Websites";
+	$subject = "neebMedia - Contact Page";
 	if (!preg_match("/([\w\-]+\@[\w\-]+\.[\w\-]+)/", $email))
 	{
 	    show_error("E-mail address not valid");
@@ -129,6 +139,16 @@ if (verifyFormToken('form1')) {
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="icon" href="/img/favicon.ico">
         <link href="https://fonts.googleapis.com/css?family=Montserrat:200,600" rel="stylesheet">
+		<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+		  ga('create', 'UA-94009407-2', 'auto');
+		  ga('send', 'pageview');
+
+		</script>
     </head>
     <?php
 	$newToken = generateFormToken('form1');

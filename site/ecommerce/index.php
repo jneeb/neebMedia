@@ -41,6 +41,16 @@ function show_error($myError)
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="icon" href="/img/favicon.ico">
         <link href="https://fonts.googleapis.com/css?family=Montserrat:200,600" rel="stylesheet">
+		<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+		  ga('create', 'UA-94009407-2', 'auto');
+		  ga('send', 'pageview');
+
+		</script>
     </head>
     <body>
         <section id="header">
@@ -70,25 +80,11 @@ function show_error($myError)
             </div>
         </section>
 
-        <section id="portfolioHero">
-            <h1>CONTACT</h1>
-        </section>
-
-        <section id="contact">
-            <h2>INTERESTED IN WORKING WITH US?</h2>
-            <p>Call us today at <b>(647) 550 4905</b> for a free quote, or email us below.</p>
-            <p class="error">Please correct the following:</p><br />
-            <?php echo $myError; ?>
-            <section id="contactForm">
-                <form action="index.php" id="form" method="post">
-                            <input type="hidden" name="token" value="<?php echo $newToken; ?>">
-                            <input type="text" name="name" placeholder="Name:">
-                            <input type="text" name="email" placeholder="Email:">
-                            <textarea name="comments" placeholder="Tell us about the project:" id="" cols="30" rows="10"></textarea>
-                            <button type="submit" name="submit">Send</button>
-                        </form>
-            </section>
-        </section>
+        <section class="completeMessage">
+			<h1>ERROR! <br /> <p class="error">Please correct the following:</p><br />
+        	<?php echo $myError; ?></h1>
+			<a href="/contact"><button type="button" name="button">Contact</button></a>
+		</section>
 
         <section id="footer">
             <div class="webMap">
@@ -119,7 +115,7 @@ if (verifyFormToken('form1')) {
 	$name = check_input($_POST['name'], "Enter your name.");
 	$email = check_input($_POST['email']);
 	$comments = check_input($_POST['comments'], "Please include a message.");
-	$subject = "neebMedia - Websites";
+	$subject = "neebMedia - eCommerce";
 	if (!preg_match("/([\w\-]+\@[\w\-]+\.[\w\-]+)/", $email))
 	{
 	    show_error("E-mail address not valid");
@@ -143,6 +139,16 @@ if (verifyFormToken('form1')) {
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="icon" href="/img/favicon.ico">
         <link href="https://fonts.googleapis.com/css?family=Montserrat:200,600" rel="stylesheet">
+		<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+		  ga('create', 'UA-94009407-2', 'auto');
+		  ga('send', 'pageview');
+
+		</script>
     </head>
     <?php
 	$newToken = generateFormToken('form1');
