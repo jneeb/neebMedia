@@ -139,6 +139,8 @@ if (verifyFormToken('form1')) {
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="icon" href="/img/favicon.ico">
         <link href="https://fonts.googleapis.com/css?family=Montserrat:200,600" rel="stylesheet">
+		<meta name="description" content="Toronto professional experts in affordable website design, eCommerce development, SEO (Search Engine Optimization) and custom WordPress design.">
+		<meta name="keywords" content="Toronto affordable web design, custom wordpress, toronto eCommerce, toronto search engine optimization, expert toronto design">
 		<script>
 		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -217,6 +219,8 @@ if (verifyFormToken('form1')) {
                 <!-- <i class="fa fa-youtube-play" aria-hidden="true"></i> -->
             </div>
         </section>
-
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     </body>
+	<script type="text/javascript" src="/functions/burger.js"></script>
+    <script type="text/javascript" src="/functions/smoothScroll.js"></script>
 </html>
